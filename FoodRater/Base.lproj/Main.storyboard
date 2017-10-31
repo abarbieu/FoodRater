@@ -30,16 +30,24 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oVR-7L-chh">
+                                <color key="backgroundColor" red="0.50768142938613892" green="0.082476879359523331" blue="0.10541831386592342" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.39503296640000002" green="0.4766062868" blue="0.510603535" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.40670409689999998" green="0.48828978540000001" blue="0.51975388600000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.39503296640993163" green="0.47660628679923667" blue="0.51060353499378652" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="leadingMargin" secondItem="tfM-K5-dr1" secondAttribute="leading" id="Osy-mG-IFv"/>
-                            <constraint firstItem="tfM-K5-dr1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="90" id="VqQ-bc-1Oe" userLabel="La belle.top = Top Layout Guide.bottom + 9"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="tfM-K5-dr1" secondAttribute="trailing" id="eTn-HQ-yFS"/>
-                            <constraint firstItem="tfM-K5-dr1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oHu-2I-ToF"/>
-                            <constraint firstItem="B65-sT-EfP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="sJ1-fi-mAT"/>
-                            <constraint firstItem="B65-sT-EfP" firstAttribute="top" secondItem="tfM-K5-dr1" secondAttribute="bottom" constant="10" id="wIc-vH-Exn"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="B65-sT-EfP" secondAttribute="trailing" id="zSs-zT-M4J"/>
+                            <constraint firstItem="tfM-K5-dr1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="92" id="5lC-SQ-x31"/>
+                            <constraint firstItem="oVR-7L-chh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="9vz-9J-kxT"/>
+                            <constraint firstItem="tfM-K5-dr1" firstAttribute="leading" secondItem="oVR-7L-chh" secondAttribute="leading" id="Ct2-GD-N8R"/>
+                            <constraint firstItem="oVR-7L-chh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ELe-hI-5wY"/>
+                            <constraint firstItem="tfM-K5-dr1" firstAttribute="trailing" secondItem="B65-sT-EfP" secondAttribute="trailing" id="Ggl-tF-b5D"/>
+                            <constraint firstItem="tfM-K5-dr1" firstAttribute="trailing" secondItem="oVR-7L-chh" secondAttribute="trailing" id="IRJ-HG-pJd"/>
+                            <constraint firstItem="oVR-7L-chh" firstAttribute="top" secondItem="B65-sT-EfP" secondAttribute="bottom" constant="38" id="TqD-R3-JJt"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="oVR-7L-chh" secondAttribute="leading" id="VoI-Xd-Yfc"/>
+                            <constraint firstItem="tfM-K5-dr1" firstAttribute="leading" secondItem="B65-sT-EfP" secondAttribute="leading" id="dH8-jv-XCM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oVR-7L-chh" secondAttribute="trailing" id="hTu-bC-pVV"/>
+                            <constraint firstItem="B65-sT-EfP" firstAttribute="top" secondItem="tfM-K5-dr1" secondAttribute="bottom" constant="8" id="w3I-F0-7Pt"/>
                         </constraints>
                     </view>
                 </viewController>
