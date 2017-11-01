@@ -8,11 +8,43 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    @IBOutlet weak var foodInp: UITextField!
+    @IBOutlet weak var foodLabel: UILabel!
+    @IBOutlet weak var foodImg: UIImageView!
+    let imgres = UIImagePickerController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        imgres.sourceType = .photoLibrary
+        imgres.delegate = self
+        foodInp.delegate = self
+        
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        foodInp.resignFirstResponder()
+        return true
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController){
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let tempImg = info[UIImagePickerControllerOriginalImage] as! UIImage
+        foodImg.image = tempImg
+        picker.dismiss(animated: true, completion: nil)
+    }
+    @IBAction func foodInp(_ sender: AnyObject) {
+        //foodLabel.text = foodInp.text!
+    }
+    @IBAction func tapped(_ sender: AnyObject) {
+        if(foodInp.isEditing){
+            foodInp.resignFirstResponder()
+        }
+        self.present(imgres, animated: true, completion: nil)
     }
 
 }
