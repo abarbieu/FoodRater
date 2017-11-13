@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,7 +21,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Food Goes Here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B65-sT-EfP">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Food Goes Here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B65-sT-EfP">
+                                <rect key="frame" x="27.5" y="135.5" width="320" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardAppearance="alert" returnKeyType="continue"/>
@@ -28,17 +31,20 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Watch'a Eatin':" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfM-K5-dr1">
+                                <rect key="frame" x="27.5" y="97.5" width="320" height="30"/>
                                 <color key="backgroundColor" red="0.71065134492883453" green="0.533841960404555" blue="0.55128553544346726" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto.png" translatesAutoresizingMaskIntoConstraints="NO" id="ScA-l1-fdM">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="defaultPhoto.png" translatesAutoresizingMaskIntoConstraints="NO" id="ScA-l1-fdM">
+                                <rect key="frame" x="27.5" y="173.5" width="320" height="320"/>
                                 <color key="backgroundColor" red="0.62352941176470589" green="0.450439453125" blue="0.77254901960784317" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="305" id="TMu-JD-F8q"/>
-                                    <constraint firstAttribute="width" constant="320" id="nLZ-H6-bZ4"/>
+                                    <constraint firstAttribute="height" constant="320" id="Iy0-Ak-Kab"/>
+                                    <constraint firstAttribute="width" constant="320" id="f8i-zz-1eq"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="320" id="pb0-vw-A9Q"/>
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="58S-od-EdH" appends="YES" id="wrO-V2-TGh"/>
@@ -47,22 +53,15 @@
                         </subviews>
                         <color key="backgroundColor" red="0.40669707211773892" green="0.60283337300077577" blue="0.62215594518264161" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ScA-l1-fdM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="11" id="1iI-7P-VIJ"/>
-                            <constraint firstItem="ScA-l1-fdM" firstAttribute="leading" secondItem="B65-sT-EfP" secondAttribute="leading" id="5Ap-Hy-g1r"/>
-                            <constraint firstItem="tfM-K5-dr1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="69" id="5lC-SQ-x31"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="tfM-K5-dr1" secondAttribute="trailing" constant="12" id="7db-se-x86"/>
-                            <constraint firstItem="B65-sT-EfP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8zc-3B-cKY"/>
-                            <constraint firstItem="tfM-K5-dr1" firstAttribute="trailing" secondItem="B65-sT-EfP" secondAttribute="trailing" id="Ggl-tF-b5D"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="B65-sT-EfP" secondAttribute="trailing" constant="12" id="HFn-kn-0kd"/>
+                            <constraint firstItem="B65-sT-EfP" firstAttribute="top" secondItem="tfM-K5-dr1" secondAttribute="bottom" constant="8" symbolic="YES" id="48Y-vW-sEL"/>
+                            <constraint firstItem="B65-sT-EfP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tfM-K5-dr1" secondAttribute="leading" id="6zl-aY-9t9"/>
+                            <constraint firstItem="B65-sT-EfP" firstAttribute="width" secondItem="ScA-l1-fdM" secondAttribute="width" id="7gY-Iu-fgz"/>
+                            <constraint firstItem="tfM-K5-dr1" firstAttribute="width" secondItem="ScA-l1-fdM" secondAttribute="width" id="Kpn-Bs-bOA"/>
                             <constraint firstItem="ScA-l1-fdM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="TFc-2u-k0c"/>
-                            <constraint firstItem="ScA-l1-fdM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="11" id="TpP-rZ-8lG"/>
-                            <constraint firstItem="B65-sT-EfP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="11" id="W9h-qs-ew8"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ScA-l1-fdM" secondAttribute="trailing" constant="12" id="WOk-0x-0qv"/>
-                            <constraint firstItem="ScA-l1-fdM" firstAttribute="trailing" secondItem="B65-sT-EfP" secondAttribute="trailing" id="ayT-Gc-WxI"/>
-                            <constraint firstItem="tfM-K5-dr1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="11" id="bV8-Z6-kzi"/>
-                            <constraint firstItem="tfM-K5-dr1" firstAttribute="leading" secondItem="B65-sT-EfP" secondAttribute="leading" id="dH8-jv-XCM"/>
-                            <constraint firstItem="tfM-K5-dr1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sTP-uZ-69v"/>
-                            <constraint firstItem="B65-sT-EfP" firstAttribute="top" secondItem="tfM-K5-dr1" secondAttribute="bottom" constant="16" id="w3I-F0-7Pt"/>
+                            <constraint firstItem="tfM-K5-dr1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TKg-o8-lwk"/>
+                            <constraint firstItem="tfM-K5-dr1" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ScA-l1-fdM" secondAttribute="trailing" id="p1K-DL-kGR"/>
+                            <constraint firstItem="B65-sT-EfP" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tfM-K5-dr1" secondAttribute="trailing" id="sZe-V0-Cgt"/>
+                            <constraint firstItem="ScA-l1-fdM" firstAttribute="top" secondItem="B65-sT-EfP" secondAttribute="bottom" constant="8" symbolic="YES" id="xB8-Kq-8HY"/>
                         </constraints>
                     </view>
                     <connections>
@@ -78,7 +77,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="114.40000000000001" y="123.68815592203899"/>
+            <point key="canvasLocation" x="113.04347826086958" y="123.09782608695653"/>
         </scene>
     </scenes>
     <resources>

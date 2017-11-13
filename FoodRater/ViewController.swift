@@ -25,6 +25,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         foodInp.resignFirstResponder()
+        foodInp.text = " "
         return true
     }
     
@@ -38,11 +39,12 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         picker.dismiss(animated: true, completion: nil)
     }
     @IBAction func foodInp(_ sender: AnyObject) {
-        //foodLabel.text = foodInp.text!
+        foodLabel.text = foodInp.text!
     }
     @IBAction func tapped(_ sender: AnyObject) {
         if(foodInp.isEditing){
             foodInp.resignFirstResponder()
+            foodInp.text = "  "
         }
         self.present(imgres, animated: true, completion: nil)
     }
