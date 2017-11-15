@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -50,13 +51,9 @@
                                     <outletCollection property="gestureRecognizers" destination="58S-od-EdH" appends="YES" id="wrO-V2-TGh"/>
                                 </connections>
                             </imageView>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="apj-XX-Nat" customClass="RatingControl" customModule="FoodRater" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="apj-XX-Nat" customClass="RatingControl" customModule="FoodRater" customModuleProvider="target">
                                 <rect key="frame" x="67" y="547" width="240" height="44"/>
                                 <color key="backgroundColor" red="0.40900629758834839" green="0.6042754054069519" blue="0.62189584970474243" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="6bC-35-QTf"/>
-                                    <constraint firstAttribute="width" constant="240" id="hmb-Mp-rGW"/>
-                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.40669707211773892" green="0.60283337300077577" blue="0.62215594518264161" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -64,13 +61,15 @@
                             <constraint firstItem="B65-sT-EfP" firstAttribute="top" secondItem="tfM-K5-dr1" secondAttribute="bottom" constant="8" symbolic="YES" id="48Y-vW-sEL"/>
                             <constraint firstItem="B65-sT-EfP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tfM-K5-dr1" secondAttribute="leading" id="6zl-aY-9t9"/>
                             <constraint firstItem="B65-sT-EfP" firstAttribute="width" secondItem="ScA-l1-fdM" secondAttribute="width" id="7gY-Iu-fgz"/>
+                            <constraint firstItem="apj-XX-Nat" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="51" id="Imn-NN-fcw"/>
                             <constraint firstItem="tfM-K5-dr1" firstAttribute="width" secondItem="ScA-l1-fdM" secondAttribute="width" id="Kpn-Bs-bOA"/>
-                            <constraint firstItem="apj-XX-Nat" firstAttribute="top" secondItem="ScA-l1-fdM" secondAttribute="bottom" constant="50" id="Q7n-qK-uWq"/>
+                            <constraint firstItem="apj-XX-Nat" firstAttribute="top" secondItem="ScA-l1-fdM" secondAttribute="bottom" constant="53" id="P1r-8h-teV"/>
                             <constraint firstItem="ScA-l1-fdM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="TFc-2u-k0c"/>
                             <constraint firstItem="tfM-K5-dr1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TKg-o8-lwk"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="apj-XX-Nat" secondAttribute="bottom" constant="76" id="m8t-4Q-FfJ"/>
                             <constraint firstItem="tfM-K5-dr1" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ScA-l1-fdM" secondAttribute="trailing" id="p1K-DL-kGR"/>
+                            <constraint firstItem="apj-XX-Nat" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sWb-MW-UlT"/>
                             <constraint firstItem="B65-sT-EfP" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tfM-K5-dr1" secondAttribute="trailing" id="sZe-V0-Cgt"/>
-                            <constraint firstItem="apj-XX-Nat" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wdN-Yx-QNA"/>
                             <constraint firstItem="ScA-l1-fdM" firstAttribute="top" secondItem="B65-sT-EfP" secondAttribute="bottom" constant="8" symbolic="YES" id="xB8-Kq-8HY"/>
                         </constraints>
                     </view>
