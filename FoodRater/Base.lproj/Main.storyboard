@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Food Goes Here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B65-sT-EfP">
-                                <rect key="frame" x="27.5" y="135.5" width="320" height="30"/>
+                                <rect key="frame" x="28" y="136" width="320" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardAppearance="alert" returnKeyType="continue"/>
@@ -31,14 +31,14 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Watch'a Eatin':" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfM-K5-dr1">
-                                <rect key="frame" x="27.5" y="97.5" width="320" height="30"/>
+                                <rect key="frame" x="28" y="98" width="320" height="30"/>
                                 <color key="backgroundColor" red="0.71065134492883453" green="0.533841960404555" blue="0.55128553544346726" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="defaultPhoto.png" translatesAutoresizingMaskIntoConstraints="NO" id="ScA-l1-fdM">
-                                <rect key="frame" x="27.5" y="173.5" width="320" height="320"/>
+                                <rect key="frame" x="28" y="174" width="320" height="320"/>
                                 <color key="backgroundColor" red="0.62352941176470589" green="0.450439453125" blue="0.77254901960784317" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -50,6 +50,14 @@
                                     <outletCollection property="gestureRecognizers" destination="58S-od-EdH" appends="YES" id="wrO-V2-TGh"/>
                                 </connections>
                             </imageView>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="apj-XX-Nat" customClass="RatingControl" customModule="FoodRater" customModuleProvider="target">
+                                <rect key="frame" x="67" y="547" width="240" height="44"/>
+                                <color key="backgroundColor" red="0.40900629758834839" green="0.6042754054069519" blue="0.62189584970474243" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="6bC-35-QTf"/>
+                                    <constraint firstAttribute="width" constant="240" id="hmb-Mp-rGW"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.40669707211773892" green="0.60283337300077577" blue="0.62215594518264161" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -57,10 +65,12 @@
                             <constraint firstItem="B65-sT-EfP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tfM-K5-dr1" secondAttribute="leading" id="6zl-aY-9t9"/>
                             <constraint firstItem="B65-sT-EfP" firstAttribute="width" secondItem="ScA-l1-fdM" secondAttribute="width" id="7gY-Iu-fgz"/>
                             <constraint firstItem="tfM-K5-dr1" firstAttribute="width" secondItem="ScA-l1-fdM" secondAttribute="width" id="Kpn-Bs-bOA"/>
+                            <constraint firstItem="apj-XX-Nat" firstAttribute="top" secondItem="ScA-l1-fdM" secondAttribute="bottom" constant="50" id="Q7n-qK-uWq"/>
                             <constraint firstItem="ScA-l1-fdM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="TFc-2u-k0c"/>
                             <constraint firstItem="tfM-K5-dr1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TKg-o8-lwk"/>
                             <constraint firstItem="tfM-K5-dr1" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ScA-l1-fdM" secondAttribute="trailing" id="p1K-DL-kGR"/>
                             <constraint firstItem="B65-sT-EfP" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tfM-K5-dr1" secondAttribute="trailing" id="sZe-V0-Cgt"/>
+                            <constraint firstItem="apj-XX-Nat" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wdN-Yx-QNA"/>
                             <constraint firstItem="ScA-l1-fdM" firstAttribute="top" secondItem="B65-sT-EfP" secondAttribute="bottom" constant="8" symbolic="YES" id="xB8-Kq-8HY"/>
                         </constraints>
                     </view>
@@ -77,7 +87,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="113.04347826086958" y="123.09782608695653"/>
+            <point key="canvasLocation" x="112.8" y="122.78860569715144"/>
         </scene>
     </scenes>
     <resources>
