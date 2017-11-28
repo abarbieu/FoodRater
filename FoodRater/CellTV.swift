@@ -11,6 +11,8 @@ import UIKit
 class CellTV: UITableViewCell {
 
     @IBOutlet weak var cellTitle: UILabel!
+    @IBOutlet weak var foodImg: UIImageView!
+    @IBOutlet weak var rating: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

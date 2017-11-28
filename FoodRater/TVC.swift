@@ -10,15 +10,11 @@ import UIKit
 
 class TVC: UITableViewController {
 
-    var data: [String]!
+    var data = ["init"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        data.append("zero")
-        data.append("ONE")
-        data.append("2")
-        data.append("Three")
-        data.append("4Four")
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,10 +37,17 @@ class TVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "zoop!", for: indexPath) as! CellTV
+
         cell.cellTitle.text = self.data[indexPath.row]
+        //cell.foodImg = UIImage(named: "defaultPhoto.png")
         return cell
     }
-    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "food") as! ViewController
+       
+        self.navigationController?.pushViewController(detailVC, animated: true)
+       // self.present(detailVC, animated: true, completion: nil)
+    }
 
     /*
     // Override to support conditional editing of the table view.

@@ -8,9 +8,7 @@
 
 import UIKit
 
-class RatingControl: UIView {
-    let height = UIScreen.main.bounds.height
-    let width = UIScreen.main.bounds.width
+class RatingControl: UIStackView {
     var rating = 0 {
         didSet {
             layoutSubviews()
