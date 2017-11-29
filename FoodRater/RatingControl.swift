@@ -17,7 +17,7 @@ class RatingControl: UIStackView {
     var stars: [UIButton]
     let bW = 44
     let numSt = 5
-    required init?(coder aCoder: NSCoder) {
+    required init(coder aCoder: NSCoder) {
         stars = []
         let fillSt = UIImage(named: "filledStar")
         let emptySt = UIImage(named: "emptyStar")

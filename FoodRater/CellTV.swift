@@ -10,9 +10,10 @@ import UIKit
 
 class CellTV: UITableViewCell {
 
-    @IBOutlet weak var cellTitle: UILabel!
+    @IBOutlet weak var name: UILabel!
     @IBOutlet weak var foodImg: UIImageView!
-    @IBOutlet weak var rating: UIView!
+    @IBOutlet weak var rating: RatingControl!
+    var rate: Int!
     
     override func awakeFromNib() {
         super.awakeFromNib()

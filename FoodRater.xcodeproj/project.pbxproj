@@ -13,6 +13,7 @@
 		7542A90E1FA8CCC300481C22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7542A90C1FA8CCC300481C22 /* Main.storyboard */; };
 		7542A9101FA8CCC300481C22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7542A90F1FA8CCC300481C22 /* Assets.xcassets */; };
 		7542A9131FA8CCC300481C22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7542A9111FA8CCC300481C22 /* LaunchScreen.storyboard */; };
+		757857021FCF231C00EC950D /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757857011FCF231C00EC950D /* Meal.swift */; };
 		75C9E05E1FBF465E00BF7958 /* TVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C9E05D1FBF465E00BF7958 /* TVC.swift */; };
 		75C9E0601FBF46D900BF7958 /* CellTV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C9E05F1FBF46D900BF7958 /* CellTV.swift */; };
 		75DAEBD21FAA311400D2CF69 /* defaultPhoto.png in Resources */ = {isa = PBXBuildFile; fileRef = 75DAEBD11FAA311400D2CF69 /* defaultPhoto.png */; };
@@ -27,6 +28,7 @@
 		7542A90F1FA8CCC300481C22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7542A9121FA8CCC300481C22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7542A9141FA8CCC300481C22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		757857011FCF231C00EC950D /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		75C9E05D1FBF465E00BF7958 /* TVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVC.swift; sourceTree = "<group>"; };
 		75C9E05F1FBF46D900BF7958 /* CellTV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTV.swift; sourceTree = "<group>"; };
 		75DAEBD11FAA311400D2CF69 /* defaultPhoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultPhoto.png; sourceTree = SOURCE_ROOT; };
@@ -69,6 +71,7 @@
 				75C9E05F1FBF46D900BF7958 /* CellTV.swift */,
 				7542A90F1FA8CCC300481C22 /* Assets.xcassets */,
 				75C9E05D1FBF465E00BF7958 /* TVC.swift */,
+				757857011FCF231C00EC950D /* Meal.swift */,
 				7542A9111FA8CCC300481C22 /* LaunchScreen.storyboard */,
 				7542A9141FA8CCC300481C22 /* Info.plist */,
 				75DAEBD11FAA311400D2CF69 /* defaultPhoto.png */,
@@ -154,6 +157,7 @@
 				75C9E05E1FBF465E00BF7958 /* TVC.swift in Sources */,
 				753E67871FB9FB55004BA200 /* RatingControl.swift in Sources */,
 				75C9E0601FBF46D900BF7958 /* CellTV.swift in Sources */,
+				757857021FCF231C00EC950D /* Meal.swift in Sources */,
 				7542A9091FA8CCC300481C22 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

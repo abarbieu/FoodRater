@@ -10,11 +10,12 @@ import UIKit
 
 class TVC: UITableViewController {
 
-    var data = ["init"]
+    var data = [Meal]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let imageTemp = UIImage(named: "filledStar")
+        data.append(Meal(name: "Test", rating: 4, image: imageTemp!)!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,7 +39,9 @@ class TVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "zoop!", for: indexPath) as! CellTV
 
-        cell.cellTitle.text = self.data[indexPath.row]
+        cell.rate = self.data[indexPath.row].rating
+        cell.foodImg.image = self.data[indexPath.row].image
+        cell.name.text = self.data[indexPath.row].name
         //cell.foodImg = UIImage(named: "defaultPhoto.png")
         return cell
     }
