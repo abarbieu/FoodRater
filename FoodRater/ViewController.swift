@@ -7,13 +7,17 @@
 // Init
 
 import UIKit
+import os.log
 
 class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    @IBOutlet weak var rating: RatingControl!
+    @IBOutlet weak var save: UIBarButtonItem!
     @IBOutlet weak var foodInp: UITextField!
-    @IBOutlet weak var foodLabel: UILabel!
+    //@IBOutlet weak var foodLabel: UILabel!
     @IBOutlet weak var foodImg: UIImageView!
     let imgres = UIImagePickerController()
+    var newMeal: Meal?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,12 +25,19 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         imgres.sourceType = .photoLibrary
         imgres.delegate = self
         foodInp.delegate = self
-        
+        updateSaveButtonState()
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         foodInp.resignFirstResponder()
         foodInp.text = " "
         return true
+    }
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        save.isEnabled = false
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        updateSaveButtonState()
+        navigationItem.title = textField.text
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController){
@@ -39,7 +50,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         picker.dismiss(animated: true, completion: nil)
     }
     @IBAction func foodInp(_ sender: AnyObject) {
-        foodLabel.text = foodInp.text!
+        navigationItem.title = foodInp.text
     }
     @IBAction func tapped(_ sender: AnyObject) {
         if(foodInp.isEditing){
@@ -47,6 +58,25 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             foodInp.text = "  "
         }
         self.present(imgres, animated: true, completion: nil)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        guard let button = sender as? UIBarButtonItem, button === save else {
+            os_log("MUST USE THE SAVE BUTTON", log: OSLog.default, type: .debug)
+            return
+        }
+        let name = navigationItem.title ?? ""
+        let photo = foodImg.image
+        let rating = self.rating.rating
+        
+        newMeal = Meal(name: name, rating: rating, image: photo!)
+    }
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+    private func updateSaveButtonState() {
+        let text = foodInp.text ?? ""
+        save.isEnabled = !text.isEmpty
     }
 
 }

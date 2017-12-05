@@ -14,8 +14,10 @@ class TVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let imageTemp = UIImage(named: "filledStar")
-        data.append(Meal(name: "Test", rating: 4, image: imageTemp!)!)
+        let mealB = UIImage(named: "meal3.png")
+        let mealA = UIImage(named: "meal1.png")
+        data.append(Meal(name: "Pasta", rating: 4, image: mealB!)!)
+        data.append(Meal(name: "Caprese Salad", rating: 2, image: mealA!)!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,6 +52,19 @@ class TVC: UITableViewController {
        
         self.navigationController?.pushViewController(detailVC, animated: true)
        // self.present(detailVC, animated: true, completion: nil)
+    }
+    @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.source as? ViewController, let meal = sourceViewController.newMeal {
+            
+            // Add a new meal.
+            let newIndexPath = IndexPath(row: data.count, section: 0)
+            
+            data.append(meal)
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        }
+    }
+    @IBAction func exiter(sender: UIStoryboardSegue) {
+        
     }
 
     /*

@@ -13,17 +13,19 @@ class CellTV: UITableViewCell {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var foodImg: UIImageView!
     @IBOutlet weak var rating: RatingControl!
-    var rate: Int!
+    var rate = 3
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        // Initialization code)
     }
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
-
+    override func layoutSubviews() {
+        rating.rate(rated: rate)
+        
+    }
 }

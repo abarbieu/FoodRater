@@ -31,6 +31,12 @@ class RatingControl: UIStackView {
             stars[i].setImage(fillSt, for: [.highlighted, .selected])
         }
     }
+    func rate(rated: Int){
+        if (rated >= 0) && (rated <= 5)  {
+            rating = rated
+        }
+        
+    }
     @objc func yeup(sender: UIButton){
         rating = sender.tag
     }
