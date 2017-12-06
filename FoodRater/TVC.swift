@@ -14,10 +14,13 @@ class TVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let mealB = UIImage(named: "meal3.png")
-        let mealA = UIImage(named: "meal1.png")
-        data.append(Meal(name: "Pasta", rating: 4, image: mealB!)!)
-        data.append(Meal(name: "Caprese Salad", rating: 2, image: mealA!)!)
+        
+        if let tim = load(){
+            data += tim
+        }else{
+            data.append(Meal(name: "Pasta", rating: 4, image: UIImage(named: "meal3.png")!)!)
+            data.append(Meal(name: "Caprese Salad", rating: 2, image: UIImage(named: "meal1.png")!)!)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,12 +50,14 @@ class TVC: UITableViewController {
         //cell.foodImg = UIImage(named: "defaultPhoto.png")
         return cell
     }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "food") as! ViewController
        
         self.navigationController?.pushViewController(detailVC, animated: true)
        // self.present(detailVC, animated: true, completion: nil)
     }
+    
     @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? ViewController, let meal = sourceViewController.newMeal {
             
@@ -60,9 +65,21 @@ class TVC: UITableViewController {
             let newIndexPath = IndexPath(row: data.count, section: 0)
             
             data.append(meal)
+            save()
             tableView.insertRows(at: [newIndexPath], with: .automatic)
+        
         }
     }
+    
+    private func save(){
+        NSKeyedArchiver.archiveRootObject(data, toFile: Meal.archive.path)
+    }
+    
+    private func load() -> [Meal]? {
+        return (NSKeyedUnarchiver.unarchiveObject(withFile: Meal.archive.path) as? [Meal])
+        
+    }
+    
     @IBAction func exiter(sender: UIStoryboardSegue) {
         
     }
@@ -102,14 +119,28 @@ class TVC: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        super.prepare(for: segue, sender: sender)
+        
+        if(segue.identifier == "showDetail"){
+            guard let ViewController = segue.destination as? ViewController else {
+                fatalError("destination is f'ed")
+            }
+            
+            guard let CellTV = sender as? CellTV else {
+                fatalError("sender is f'ed")
+            }
+            
+            guard let indexPath = tableView.indexPath(for: CellTV) else {
+                fatalError("cell is f'ed")
+            }
+            
+            let selectedMeal = data[indexPath.row]
+            ViewController.newMeal = selectedMeal
+        }
     }
-    */
 
 }

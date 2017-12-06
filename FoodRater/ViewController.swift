@@ -7,7 +7,6 @@
 // Init
 
 import UIKit
-import os.log
 
 class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -59,18 +58,17 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         }
         self.present(imgres, animated: true, completion: nil)
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
-        guard let button = sender as? UIBarButtonItem, button === save else {
-            os_log("MUST USE THE SAVE BUTTON", log: OSLog.default, type: .debug)
-            return
-        }
+        
         let name = navigationItem.title ?? ""
         let photo = foodImg.image
         let rating = self.rating.rating
-        
         newMeal = Meal(name: name, rating: rating, image: photo!)
+        
     }
+    
     @IBAction func cancel(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }

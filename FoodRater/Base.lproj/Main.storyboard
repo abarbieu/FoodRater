@@ -127,6 +127,7 @@
                                     <outlet property="foodImg" destination="hyN-xd-tzR" id="Mnj-E7-0XO"/>
                                     <outlet property="name" destination="eqF-N5-lIO" id="Kcg-Fh-Snk"/>
                                     <outlet property="rating" destination="kE0-Iy-GQe" id="wJd-vy-Gv5"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="detailView" id="pZh-dI-gvN"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -138,7 +139,7 @@
                     <navigationItem key="navigationItem" title="Meals" id="8uc-3T-UTY">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="7G8-SJ-3i2">
                             <connections>
-                                <segue destination="bZA-lT-1Cd" kind="presentation" id="PTY-FH-hcW"/>
+                                <segue destination="bZA-lT-1Cd" kind="presentation" identifier="addItem" id="PTY-FH-hcW"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -187,4 +188,7 @@
     <resources>
         <image name="defaultPhoto.png" width="1080" height="1080"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="pZh-dI-gvN"/>
+    </inferredMetricsTieBreakers>
 </document>
